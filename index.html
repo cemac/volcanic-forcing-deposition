@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- html start: __________________________________________________________ -->
+<html>
+  <!-- head start:_________________________________________________________ -->
+  <head>
+    <meta http-equiv="content-type"
+          content="text/html; charset=UTF-8;charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"/>
+    <!-- title: ___________________________________________________________ -->
+    <title>Volcanic forcing tool</title>
+    <!-- styles: __________________________________________________________ -->
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/nouislider.min.css"
+          media="all"/>
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/site.css"
+          media="all"/>
+    <!-- scripts: _________________________________________________________ -->
+    <!-- nouislider slider : https://refreshless.com/nouislider/:           -->
+    <script src="js/nouislider.min.js"
+            charset="utf-8">
+    </script>
+    <!-- plotly plotting : https://github.com/plotly/plotly.js/             -->
+    <script src='js/plotly_scatter3d.min.js'
+            charset='utf-8'>
+    </script>
+    <!-- local scripts:                                                     -->
+    <script src="js/site.js"
+            charset="utf-8"
+            defer>
+    </script>
+  <!-- head end:___________________________________________________________ -->
+  </head>
+  <!-- body start: ________________________________________________________ -->
+  <body>
+    <!-- container start: _________________________________________________ -->
+    <div id="container"
+         class="container column">
+      <!-- header: ________________________________________________________ -->
+      <div id="header"
+           class="header row flex_center flex_no_grow">
+          <img id="header_img"
+               class="header_image"
+               src='img/volcano.png'>
+      </div>
+      <!-- navigation: ____________________________________________________ -->
+      <div id="navigation"
+           class="navigation row flex_no_grow">
+      </div>
+      <!-- content: _______________________________________________________ -->
+      <div id="content"
+           class="content column">
+
+        <!-- main content column: _________________________________________ -->
+        <div id="main_content"
+             class="column flex_no_grow">
+
+          <!-- plot controls container: ___________________________________ -->
+          <div id="plot_control_container"
+               class="plot_control_container">
+            <!-- plot controls title: _____________________________________ -->
+            <div id="plot_control_title">
+              <h3>Model output</h3>
+            </div>
+            <!-- plot controls: ___________________________________________ -->
+            <div id="plot_control"
+                 class="plot_control row_wrap flex_grow">
+              <button id="null_button"
+                      class="plot_control_button"
+                      onclick="plot('null')">
+                Null
+              </button>
+              <button id="greenland_button"
+                      class="plot_control_button"
+                      onclick="plot('greenland')">
+                Greenland deposition
+              </button>
+              <button id="antarctica_button"
+                      class="plot_control_button"
+                      onclick="plot('antarctica')">
+                Antarctica deposition
+              </button>
+              <button id="forcing_button"
+                      class="plot_control_button"
+                      onclick="plot('forcing')">
+                Net forcing
+              </button>
+            </div>
+          <!-- end plot controls container: _______________________________ -->
+          </div>
+
+          <!-- vertical space: ____________________________________________ -->
+          <div class="content_vertical_space_1"></div>
+
+          <!-- plots: _____________________________________________________ -->
+          <div id="plot_container"
+               class="plot_container row_wrap flex_justify flex_grow">
+            <!-- january plot: ____________________________________________ -->
+            <div id="jan_plot_box"
+                 class="plot_box flex_half flex_grow">
+              <div id="jan_plot"
+                   class="plot">
+              </div>
+            </div>
+            <!-- july plot: _______________________________________________ -->
+            <div id="jul_plot_box"
+                 class="plot_box flex_half flex_grow">
+              <div id="jul_plot"
+                   class="plot">
+              </div>
+            </div>
+          <!-- end plots: _________________________________________________ -->
+          </div>
+
+          <!-- sliders: ___________________________________________________ -->
+          <div id="slider_container"
+               class="slider_container">
+            <!-- sliders title: ___________________________________________ -->
+            <div id="slider_title">
+              <h3>Constrain</h3>
+            </div>
+            <!-- antarctica deposition slider: ____________________________ -->
+            <div id="antarctica_slider_title"
+                 class="slider_title">
+              Antarctica deposition
+              <span class="slider_label"
+                    id="antarctica_slider_label"></span>
+            </div>
+            <div class="slider_row flex_row flex_center flex_grow"
+                 id="antarctica_slider_row">
+              <div class="slider_col flex_column flex_grow"
+                   id="antarctica_slider_col">
+                <div class="slider"
+                     id="antarctica_slider">
+                </div>
+              </div>
+            </div>
+            <!-- greenland deposition slider: _____________________________ -->
+            <div id="greenland_slider_title"
+                 class="slider_title">
+              Greenland deposition
+              <span class="slider_label"
+                    id="greenland_slider_label"></span>
+            </div>
+            <div class="slider_row flex_row flex_center flex_grow"
+                 id="greenland_slider_row">
+              <div class="slider_col flex_column flex_grow"
+                   id="greenland_slider_col">
+                <div class="slider"
+                     id="greenland_slider">
+                </div>
+              </div>
+            </div>
+          <!-- end sliders: _______________________________________________ -->
+          </div>
+
+          <!-- vertical space: ____________________________________________ -->
+          <div class="content_vertical_space_1"></div>
+
+          <!-- text: ______________________________________________________ -->
+          <div id="text_container"
+               class="text_container row_wrap flex_justify flex_grow">
+            <div id="text_column"
+                 class="text_column column flex_grow">
+              <h3> Text Title</h3>
+              <p> 
+                Some descriptive text goes here. Volcanoes, deposition,
+                forcing, etc.
+              </p><p> 
+                Some publication information, <a href="#">link</a>, etc.
+              </p><p> 
+                Some information about web content, repository, etc.
+              </p>
+          <!-- end text: __________________________________________________ -->
+            </div>
+          </div>
+
+          <!-- vertical space: ____________________________________________ -->
+          <div class="content_vertical_space_1"></div>
+
+       <!-- end main content column: ______________________________________ -->
+       </div>
+
+      <!-- content end: ___________________________________________________ -->
+      </div>
+      <!-- footer: ________________________________________________________ -->
+      <div id="footer"
+           class="footer row flex_no_grow">
+        <div id="footer_text"
+             class="footer_text flex_center row">
+        </div>
+      </div>
+    <!-- container end: ___________________________________________________ -->
+    </div>
+  <!-- body end: __________________________________________________________ -->
+  </body>
+<!-- html end: ____________________________________________________________ -->
+</html>

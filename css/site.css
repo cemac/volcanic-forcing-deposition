@@ -1,0 +1,344 @@
+/** body: **/
+
+body {
+  background-color: #484848;
+  margin: 0;
+  padding: 0;
+}
+
+/** auto margin: **/
+
+.margin_auto {
+  margin: auto;
+}
+
+/** paragraph: **/
+
+p {
+  padding: 0.2em;
+}
+
+/** flex classes: **/
+
+.row,
+.row_wrap,
+.column,
+.column_wrap {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.row {
+  -webkit-flex-flow: row nowrap;
+  -moz-flex-flow: row nowrap;
+  -ms-flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+
+.row_wrap {
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-direction: row;
+  -ms-flex-wrap: wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.column {
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+
+.column_wrap {
+  -webkit-flex-flow: column wrap;
+  -moz-flex-flow: column wrap;
+  -ms-flex-direction: column;
+  -ms-flex-wrap: wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+.flex_center {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.flex_start {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.flex_end {
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.flex_justify {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: justify;
+  justify-content: space-around;
+}
+
+.flex_grow {
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -moz-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.flex_no_grow {
+  -webkit-box-flex: 0 1 auto;
+  -moz-box-flex: 0 1 auto;
+  -webkit-flex: 0 1 auto;
+  -moz-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.flex_half {
+  -webkit-flex-basis: 34%;
+  -moz-flex-basis: 34%;
+  -ms-flex-basis: 34%;
+  flex-basis: 34%;
+}
+
+.flex_full {
+  -webkit-flex-basis: 67%;
+  -moz-flex-basis: 67%;
+  -ms-flex-basis: 67%;
+  flex-basis: 67%;
+}
+
+/** general site styles: **/
+
+body {
+  font-family: sans-serif, Arial, Helvetica;
+  font-size: 0.9em;
+  color: #000;
+}
+
+ul, ol, dl {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  padding-top: 0.2em;
+  margin-block-end: 0.2em;
+}
+
+a {
+  color: #163317;
+  outline: 0;
+}
+
+a:active,
+a:focus {
+  outline: 0;
+}
+
+a img {
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+}
+
+a img:active,
+a img:focus {
+  outline: 0;
+}
+
+h1 {
+  color: #163317;
+  font-size: 1.3em;
+}
+
+h2 {
+  color: #163317;
+  font-size: 1.2em;
+}
+
+h3 {
+  color: #163317;
+  font-size: 1.1em;
+}
+
+header, section, footer, aside, article, figure {
+  display: block;
+}
+
+/** main container: **/
+
+/** container: **/
+
+.container {
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/** header: **/
+
+.header {
+  background-color: #333366;
+  height: 70px;
+}
+
+.header_image {
+  max-width: 70px;
+  max-height: 200px;
+  margin: 10px;
+}
+
+/** navigation: **/
+
+.navigation {
+  min-height: 10px;
+  color: #ffffff;
+  background-color: #163317;
+}
+
+/** footer: **/
+
+.footer {
+  min-height: 30px;
+  color: #ffffff;
+  background-color: #272727;
+}
+
+/** content: **/
+
+.content {
+  color: #000000;
+  background-color: #ffffff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/** vertical space: **/
+
+.content_vertical_space_1 {
+  height: 1em;
+}
+
+.content_vertical_space_2 {
+  height: 2em;
+}
+
+/** plot controls: **/
+
+/* buttons : */
+
+button {
+  width: 200px;
+  color: #ffffff;
+  background-color: #bcbcbc;
+  border: 1px solid #bcbcbc;
+  padding: 3px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+
+button:focus, button:active, button:hover {
+  background-color: #9c9c9c;
+  border: 1px solid #9c9c9c;
+}
+
+button:disabled, button[disabled] {
+  color: #ffffff;
+  background-color: #333366;
+  border: 1px solid #333366;
+  cursor: auto;
+}
+
+/* remove outlines from buttons: */
+
+button, button:focus, button:active {
+  outline: 0;
+}
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+/** plots: **/
+
+.plot_container {
+  max-width: 100%;
+}
+
+.plot_box {
+  height: 0;
+  overflow: hidden;
+  padding-top: 45%;
+  position: relative;
+}
+
+.plot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97%;
+  height: 97%;
+}
+
+@media only screen and (max-width: 800px) {
+  .plot_box {
+    -webkit-flex-basis: 51%;
+    -moz-flex-basis: 51%;
+    -ms-flex-basis: 51%;
+    flex-basis: 51%;
+    padding-top: 85%;
+  }
+}
+
+/** sliders: **/
+
+.slider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+@media only screen and (max-width: 800px) {
+  .slider {
+    width: 90%;
+  }
+}
+
+.noUi-connect {
+  background: #333366;
+}
+
+.slider_label {
+  font-weight: lighter;
+}
