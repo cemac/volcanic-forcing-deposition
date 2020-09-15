@@ -600,13 +600,26 @@ function plot_data() {
         'colorscale': data_style['colorscale'],
         'showscale': data_style['showscale'],
         'colorbar': {
-          'title': data_style['colorbar']['title'],
+          'title': {
+            'text': data_style['colorbar']['title'],
+            'font': {
+              'size': 16
+            }
+          },
           'titleside': 'right',
-          'tickprefix': data_style['colorbar']['tickprefix']
+          'tickprefix': data_style['colorbar']['tickprefix'],
+          'tickfont': {
+            'size': 14
+          }
         }
       },
       'mode': 'markers',
       'hoverinfo': 'text',
+      'hoverlabel': {
+        'font': {
+          'size': 14
+        }
+      },
       'text': hover_text
     };
     var all_plots = [scatter_plot];
@@ -620,34 +633,50 @@ function plot_data() {
       'marker.cmax': data_style['cmax'],
       'marker.colorscale': [data_style['colorscale']],
       'marker.showscale': data_style['showscale'],
-      'marker.colorbar.title': data_style['colorbar']['title'],
+      'marker.colorbar.title.text': data_style['colorbar']['title'],
+      'marker.colorbar.title.font.size': 16,
       'marker.colorbar.titleside': 'right',
       'marker.colorbar.tickprefix': data_style['colorbar']['tickprefix'],
+      'marker.colorbar.tickfont.size': 14,
       'text': [hover_text]
     };
     /* plot layout: */
     var plot_layout = {
-      'title': month_style['title'],
+      'title': {
+         'text': month_style['title'],
+         'font': {
+           'size': 18
+         }
+      },
       'scene': {
         'aspectmode': 'cube',
         'xaxis': {
           'range': [x_max, x_min],
           'title': {
-            'text': axes_style['x']['title']
+            'text': axes_style['x']['title'],
+            'font': {
+              'size': 16
+            }
           },
           'zeroline': false
         },
         'yaxis': {
           'range': [y_max, y_min],
           'title': {
-            'text': axes_style['y']['title']
+            'text': axes_style['y']['title'],
+            'font': {
+              'size': 16
+            }
           },
           'zeroline': false
         },
         'zaxis': {
           'range': [z_min, z_max],
           'title': {
-            'text': axes_style['z']['title']
+            'text': axes_style['z']['title'],
+            'font': {
+              'size': 16
+            }
           },
           'zeroline': false
         },

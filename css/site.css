@@ -140,7 +140,7 @@ p {
 
 body {
   font-family: sans-serif, Arial, Helvetica;
-  font-size: 0.9em;
+  font-size: 1.0em;
   color: #000;
 }
 
@@ -266,6 +266,7 @@ button {
   padding: 3px;
   margin: 2px 2px;
   cursor: pointer;
+  font-size: 1.05em;
 }
 
 button:focus, button:active, button:hover {
