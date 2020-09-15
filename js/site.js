@@ -603,7 +603,8 @@ function plot_data() {
           'tickprefix': data_style['colorbar']['tickprefix'],
           'tickfont': {
             'size': 14
-          }
+          },
+          'len': 0.7
         }
       },
       'mode': 'markers',
@@ -673,6 +674,18 @@ function plot_data() {
           },
           'zeroline': false
         },
+        'camera': {
+          'eye': {
+            'x': 1.6,
+            'y': 1.6,
+            'z': 1.6
+          }
+        }
+      },
+      'margin': {
+        't': 30,
+        'b': 10,
+        'l': 10
       }
     };
     /* plot config: */
