@@ -549,13 +549,6 @@ function update_hover_text() {
       new_text[j] = 'SO₂ : ' + x_data[j] + '<br>'
                     + 'Latitude : ' + y_data[j] + '<br>'
                     + 'Height : ' + z_data[j];
-      /* add mean and std. values if available: */
-      if (mean_value != 'null') {
-        new_text[j] = new_text[j] + '<br>Mean : ' + mean_value;
-      };
-      if (sd_value != 'null') {
-        new_text[j] = new_text[j] + '<br>Std. : ' + sd_value;
-      };
     };
     /* store the new text: */
     plot_vars[data_type][var_month]['hover_text'] = new_text;
