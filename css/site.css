@@ -144,6 +144,10 @@ body {
   color: #000;
 }
 
+tt {
+  font-size: 1.1em;
+}
+
 ul, ol, dl {
   margin: 0;
 }
