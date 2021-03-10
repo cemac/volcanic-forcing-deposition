@@ -171,7 +171,11 @@ var plot_vars = {
       'showscale': false,
       'colorbar': {
         'title': '',
-        'tickprefix': ''
+        'tickprefix': '',
+        'tickmode': 'auto',
+        'tick0': null,
+        'dtick': null,
+        'ticks': ''
       }
     },
     'antarctica': {
@@ -186,7 +190,11 @@ var plot_vars = {
       'showscale': true,
       'colorbar': {
         'title': 'Antarctica deposition (kg SO₄ km²)',
-        'tickprefix': '    '
+        'tickprefix': '    ',
+        'tickmode': 'linear',
+        'tick0': -5,
+        'dtick': 10,
+        'ticks': 'outside'
       }
     },
     'greenland': {
@@ -201,22 +209,50 @@ var plot_vars = {
       'showscale': true,
       'colorbar': {
         'title': 'Greenland deposition (kg SO₄ km²)',
-        'tickprefix': '  '
+        'tickprefix': '  ',
+        'tickmode': 'linear',
+        'tick0': -15,
+        'dtick': 30,
+        'ticks': 'outside'
       }
     },
     'forcing': {
       'colorscale': [
-        [0,'rgb(0,0,0)'],
-        [0.3,'rgb(230,0,0)'],
-        [0.6,'rgb(255,210,0)'],
-        [1,'rgb(255,255,255)']
+        [0.0, 'rgb(11,0,0)'],
+        [0.083, 'rgb(11,0,0)'],
+        [0.083, 'rgb(71,0,0)'],
+        [0.167, 'rgb(71,0,0)'],
+        [0.167, 'rgb(131,0,0)'],
+        [0.25, 'rgb(131,0,0)'],
+        [0.25, 'rgb(192,0,0)'],
+        [0.333, 'rgb(192,0,0)'],
+        [0.333, 'rgb(255,0,0)'],
+        [0.417, 'rgb(255,0,0)'],
+        [0.417, 'rgb(255,60,0)'],
+        [0.5, 'rgb(255,60,0)'],
+        [0.5, 'rgb(255,121,0)'],
+        [0.583, 'rgb(255,121,0)'],
+        [0.583, 'rgb(255,181,0)'],
+        [0.667, 'rgb(255,181,0)'],
+        [0.667, 'rgb(255,244,0)'],
+        [0.75, 'rgb(255,244,0)'],
+        [0.75, 'rgb(255,255,74)'],
+        [0.833, 'rgb(255,255,74)'],
+        [0.833, 'rgb(255,255,164)'],
+        [0.917, 'rgb(255,255,164)'],
+        [0.917, 'rgb(255,255,255)'],
+        [1.0, 'rgb(255,255,255)']
       ],
-      'cmin': -600,
-      'cmax': 50,
+      'cmin': -750,
+      'cmax': -150,
       'showscale': true,
       'colorbar': {
         'title': 'Time-integrated RF (MJ m⁻²)',
-        'tickprefix': ''
+        'tickprefix': '',
+        'tickmode': 'linear',
+        'tick0': -750,
+        'dtick': 100,
+        'ticks': 'outside'
       }
     },
   },
@@ -601,6 +637,10 @@ function plot_data() {
           },
           'titleside': 'right',
           'tickprefix': data_style['colorbar']['tickprefix'],
+          'tickmode': data_style['colorbar']['tickmode'],
+          'tick0': data_style['colorbar']['tick0'],
+          'dtick': data_style['colorbar']['dtick'],
+          'ticks': data_style['colorbar']['ticks'],
           'tickfont': {
             'size': 14
           },
@@ -631,6 +671,10 @@ function plot_data() {
       'marker.colorbar.title.font.size': 16,
       'marker.colorbar.titleside': 'right',
       'marker.colorbar.tickprefix': data_style['colorbar']['tickprefix'],
+      'marker.colorbar.tickmode': data_style['colorbar']['tickmode'],
+      'marker.colorbar.tick0': data_style['colorbar']['tick0'],
+      'marker.colorbar.dtick': data_style['colorbar']['dtick'],
+      'marker.colorbar.ticks': data_style['colorbar']['ticks'],
       'marker.colorbar.tickfont.size': 14,
       'text': [hover_text]
     };
@@ -655,7 +699,7 @@ function plot_data() {
           'zeroline': false
         },
         'yaxis': {
-          'range': [y_max, y_min],
+          'range': [y_min, y_max],
           'title': {
             'text': axes_style['y']['title'],
             'font': {
