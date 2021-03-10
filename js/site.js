@@ -146,10 +146,10 @@ var plot_vars = {
   /* plot styles: */
   'axes_style': {
     'x': {
-      'title': 'SO₂ emission (Tg)'
+      'title': 'Eruption latitude (°N)'
     },
     'y': {
-      'title': 'Eruption latitude (°N)'
+      'title': 'SO₂ emission (Tg)'
     },
     'z': {
       'title': 'Injection height (km)'
@@ -383,8 +383,8 @@ function constrain_data() {
     return;
   };
   /* axes values: */
-  var x = plot_vars['axes']['so2'];
-  var y = plot_vars['axes']['lat'];
+  var x = plot_vars['axes']['lat'];
+  var y = plot_vars['axes']['so2'];
   var z = plot_vars['axes']['h'];
   /* data type: */
   var data_type = plot_vars['data_type'];
@@ -423,8 +423,8 @@ function constrain_data() {
     };
     /* store the values: */
     plot_vars[data_type][var_month]['mean_plot'] = mean_new;
-    plot_vars[data_type][var_month]['so2_plot'] = x_new;
-    plot_vars[data_type][var_month]['lat_plot'] = y_new;
+    plot_vars[data_type][var_month]['lat_plot'] = x_new;
+    plot_vars[data_type][var_month]['so2_plot'] = y_new;
     plot_vars[data_type][var_month]['h_plot'] = z_new;
   };
 };
@@ -522,8 +522,8 @@ function update_sliders() {
 /* hover text updating function: */
 function update_hover_text() {
   /* axes data: */
-  var x_data = plot_vars['axes']['so2'];
-  var y_data = plot_vars['axes']['lat'];
+  var x_data = plot_vars['axes']['lat'];
+  var y_data = plot_vars['axes']['so2'];
   var z_data = plot_vars['axes']['h'];
   /* data type: */
   var data_type = plot_vars['data_type'];
@@ -546,8 +546,8 @@ function update_hover_text() {
       var mean_value = mean[j];
       var sd_value = sd[j];
       /* create text: */
-      new_text[j] = 'SO₂ : ' + x_data[j] + '<br>'
-                    + 'Latitude : ' + y_data[j] + '<br>'
+      new_text[j] = 'Latitude : ' + x_data[j] + '<br>'
+                    + 'SO₂ : ' + y_data[j] + '<br>'
                     + 'Height : ' + z_data[j];
     };
     /* store the new text: */
@@ -564,12 +564,12 @@ function plot_data() {
   /* for each month: */
   for (var i = 0, var_month; var_month = var_months[i]; i++) {
     /* axes variables: */
-    var x = plot_vars[data_type][var_month]['so2_plot'];
-    var x_min = plot_vars['axes']['so2_min'];
-    var x_max = plot_vars['axes']['so2_max'];
-    var y = plot_vars[data_type][var_month]['lat_plot'];
-    var y_min = plot_vars['axes']['lat_min'];
-    var y_max = plot_vars['axes']['lat_max'];
+    var x = plot_vars[data_type][var_month]['lat_plot'];
+    var x_min = plot_vars['axes']['lat_min'];
+    var x_max = plot_vars['axes']['lat_max'];
+    var y = plot_vars[data_type][var_month]['so2_plot'];
+    var y_min = plot_vars['axes']['so2_min'];
+    var y_max = plot_vars['axes']['so2_max'];
     var z = plot_vars[data_type][var_month]['h_plot'];
     var z_min = plot_vars['axes']['h_min'];
     var z_max = plot_vars['axes']['h_max'];
