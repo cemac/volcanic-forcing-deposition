@@ -224,14 +224,14 @@ var plot_vars = {
         [1,'rgb(255,255,255)']
       ],
       'cmin': -750,
-      'cmax': -150,
+      'cmax': 0,
       'showscale': true,
       'colorbar': {
         'title': 'Time-integrated RF (MJ m⁻²)',
         'tickprefix': '',
         'tickmode': 'linear',
         'tick0': -750,
-        'dtick': 100,
+        'dtick': 125,
         'ticks': 'outside'
       }
     },
